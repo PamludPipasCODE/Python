@@ -1,0 +1,42 @@
+from time import sleep
+from random import randint
+contJG = 0
+contPC = 0
+while True:
+  print('')
+  print('TECLE 99 PARA FINALIZAR O JOGO E SOMAR OS RESULTADOS')
+  jog = int(input('Jogue um Numero de 0 a 10  : '))
+  if jog == 99:
+    break
+  pc = randint(0,10)
+  poui = str(input('[P] par ou [I] impar: ')).upper()
+  soma = jog + pc
+  print('')
+  if (soma%2) == 0:#caso de PAR
+    print('O RESULTADO FOI PAR')
+    print('')
+    if poui == 'P':#caso o jogador jogue PAR
+      print('Você venceu o Computador...')
+      print(f'você jogou {jog}, e o computador {pc}, totalizando {soma}')
+      contJG += 1
+    if poui == 'I':
+      print('Você Perdeu para o Computador...')
+      print(f'você jogou {jog}, e o computador {pc}, totalizando {soma}')
+      contPC += 1  
+  if (soma%2) == 1:#caso de IMPAR
+    print('O RESULTADO FOI IMPAR')
+    print('')
+    if poui == 'I':#caso o jogador jogue IMPAR
+      print('Você venceu o Computador...')
+      print(f'você jogou {jog}, e o computador {pc}, totalizando {soma}')  
+      contJG += 1
+    if poui == 'P':#caso o jogador jogue PAR
+      print('o Computador VENCEU...')
+      print(f'você jogou {jog}, e o computador {pc} totalizando {soma}') 
+      contPC += 1
+print('FIM DO JOGO')
+print('ANALISANDO SEU RESULTADO...')
+sleep(2)
+print(f'JOGADOR VITORIAS : {contJG}')
+print(f'COMPUTADOR VITORIAS : {contPC}')
+    
